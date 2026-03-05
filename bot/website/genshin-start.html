@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genshin Start - 优波特</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        nav {
+            margin-bottom: 40px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: #764ba2;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.8;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            font-size: 1.8em;
+            margin-right: 20px;
+        }
+        
+        .feature-text {
+            flex: 1;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .github-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">← 返回主页</a>
+        </nav>
+        
+        <header>
+            <h1>🌟 Genshin Start</h1>
+            <p class="subtitle">WebGPU 实现原神效果的学习项目</p>
+        </header>
+        
+        <div class="card">
+            <h2>📋 项目简介</h2>
+            <p>这是一个用 WebGPU 实现原神效果的学习项目，所有实现细节都参考自原始项目。</p>
+            <span class="status-badge">✅ 项目构建成功</span>
+        </div>
+        
+        <div class="card">
+            <h2>🎮 实现的效果</h2>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <span class="feature-icon">✨</span>
+                    <div class="feature-text">
+                        <strong>Bloom 效果</strong><br>
+                        光晕特效
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">⭐</span>
+                    <div class="feature-text">
+                        <strong>星星粒子系统</strong><br>
+                        动态粒子效果
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">🔍</span>
+                    <div class="feature-text">
+                        <strong>FXAA 抗锯齿</strong><br>
+                        快速近似抗锯齿
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">🎨</span>
+                    <div class="feature-text">
+                        <strong>背景颜色问题</strong><br>
+                        场景渲染优化
+                    </div>
+                </li>
+                <li class="feature-item">
+                    <span class="feature-icon">🔄</span>
+                    <div class="feature-text">
+                        <strong>法线问题</strong><br>
+                        3D渲染优化
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>🛠️ 技术栈</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">WebGPU</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">gl-matrix</span>
+                <span class="tech-tag">Tone.js</span>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📂 项目信息</h2>
+            <p><strong>原始项目：</strong> <a href="https://github.com/gamemcu/www-genshin" style="color: #667eea;" target="_blank">gamemcu/www-genshin</a></p>
+            <p><strong>学习实现：</strong> Eric-Schecter/genshin-start</p>
+            
+            <a href="https://github.com/Eric-Schecter/genshin-start" class="github-link" target="_blank">
+                👉 查看 GitHub 仓库
+            </a>
+        </div>
+        
+        <footer>
+            <p>Made with ❤️ by 优波特 · 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
